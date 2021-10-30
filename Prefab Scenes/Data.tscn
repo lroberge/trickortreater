@@ -44,6 +44,7 @@ name = "Vanilla Jelly Cup"
 sugar = 3
 
 [sub_resource type="Resource" id=6]
+resource_name = "None"
 script = ExtResource( 6 )
 name = "None"
 sugar = 100

@@ -1,5 +1,6 @@
 extends Area2D
 
+onready var inventory = get_node("/root/Game/InventoryManager")
 
 export(NodePath) var alertPath
 onready var alertLabel = get_node(alertPath)
@@ -22,17 +23,19 @@ func _ready():
 
 func _on_Area2D_body_entered(body):
 	if not exhausted:
+		inventory.add_candy()
 		emit_signal("give_candy", null)
 		var refresh = rng.randf_range(0.0, 1.0)
 		if refresh <= refreshChance:
 			var refreshTime = rng.randi_range(refreshTimeMinimum, refreshTimeMaximum)
 			var refreshTimer = get_tree().create_timer(refreshTime)
-			refreshTimer.connect("timeout", )
+			refreshTimer.connect("timeout", self, "refresh_candy")
 		exhausted = true
 	else:
 		print("Doormat exhausted - play a door shaking sound?")
 
-func
+func refresh_candy():
+	exhausted = false
 
 func _on_Area2D_body_exited(body):
 	alertLabel.visible = false

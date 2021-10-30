@@ -10,7 +10,8 @@ onready var player = get_node(playerPath)
 func _ready():
 	pass # Replace with function body.
 
-
+func add_candy():
+	print("Okay this did work")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
