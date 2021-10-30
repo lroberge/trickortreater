@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://PlayerTest.gd" type="Script" id=1]
+[ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://street.png" type="Texture" id=2]
 [ext_resource path="res://car.png" type="Texture" id=3]
 
@@ -9,10 +9,10 @@ bg_color = Color( 0.976471, 0.596078, 0.133333, 0.784314 )
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 240.884, 97.6065 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 47.8176, 46.11 )
 
 [node name="Game" type="Node"]
@@ -46,7 +46,7 @@ position = Vector2( 524.127, 40.3175 )
 texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/StaticBody2D"]
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="Player" type="KinematicBody2D" parent="."]
 position = Vector2( 493.049, 270.463 )
@@ -59,4 +59,4 @@ polygon = PoolVector2Array( -2.04922, -44.9367, 47.3924, -1.85185, 0.0697021, 45
 current = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource( 2 )
+shape = SubResource( 3 )
