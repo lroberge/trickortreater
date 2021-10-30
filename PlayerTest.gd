@@ -1,10 +1,8 @@
-extends Node2D
+extends KinematicBody2D
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
+# This variable is exported, and can be edited in the Inspector
+# Speed, in maximum pixels per second
+export var speed = 200
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,20 +10,18 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _physics_process(delta):
 	var velocity = Vector2()
 	
-	if(Input.is_action_pressed("ui_up")):
+	if(Input.is_action_pressed("player_up")):
 		velocity.y -= 1
-	if(Input.is_action_pressed("ui_down")):
+	if(Input.is_action_pressed("player_down")):
 		velocity.y += 1
-	if(Input.is_action_pressed("ui_left")):
+	if(Input.is_action_pressed("player_left")):
 		velocity.x -= 1
-	if(Input.is_action_pressed("ui_right")):
+	if(Input.is_action_pressed("player_right")):
 		velocity.x += 1
 	
-	if velocity.length() > 0:
-		velocity = velocity.normalized() * 10
+	velocity = velocity.normalized() * speed
 	
-	position += velocity
-	pass
+	move_and_slide(velocity)
