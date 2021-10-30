@@ -4,7 +4,21 @@
 
 [node name="Game" type="Node"]
 
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="GUI"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -56.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="PlayerTest" type="Polygon2D" parent="."]
 position = Vector2( 579.173, 245.795 )
 polygon = PoolVector2Array( -2.04922, -44.9367, 47.3924, -1.85185, 0.0697021, 45.4708, -45.1341, -1.14554 )
 script = ExtResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="PlayerTest"]
+current = true
