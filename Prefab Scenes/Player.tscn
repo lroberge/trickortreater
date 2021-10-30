@@ -6,7 +6,6 @@
 extents = Vector2( 36.4627, 11.2591 )
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 493.049, 270.463 )
 script = ExtResource( 1 )
 
 [node name="PlayerPoly" type="Polygon2D" parent="."]
@@ -14,6 +13,7 @@ position = Vector2( 0, 17 )
 polygon = PoolVector2Array( -38.0967, -119.454, -36.415, -6.77429, 35.3416, -5.09253, 35.3416, -124.5 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 0, -53 )
 current = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

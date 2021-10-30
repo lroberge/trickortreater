@@ -2,15 +2,13 @@ tool
 class_name CandyType extends Resource
 
 # Variables
-export(Texture) var displayImage
+export(Texture) var displayImage = null
 export(String) var name setget set_candyname
-export(int) var sugar
+export(int) var sugar = 0
 
 # Initialization function - every single variable needs to have a default
-func _init(p_displayImage = null, p_name = "None", p_sugar = 0):
-	displayImage = p_displayImage
+func _init(p_name = "None"):
 	name = p_name
-	sugar = p_sugar
 
 func set_candyname(value):
 	set_name(value)

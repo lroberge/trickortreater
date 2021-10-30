@@ -13,27 +13,21 @@ _global_script_classes=[ {
 "class": "CandyType",
 "language": "GDScript",
 "path": "res://Candy Types/CandyType.gd"
-}, {
-"base": "Node",
-"class": "CandyTypeList",
-"language": "GDScript",
-"path": "res://GameData.gd"
 } ]
 _global_script_class_icons={
-"CandyType": "",
-"CandyTypeList": ""
+"CandyType": ""
 }
 
 [application]
 
 config/name="Trick or Treat"
 run/main_scene="res://Game.tscn"
-config/icon="res://Misc Assets/icon.png"
+config/icon="res://tempicon.png"
 
 [display]
 
 window/stretch/mode="2d"
-window/stretch/aspect="keep"
+window/stretch/aspect="expand"
 
 [gdnative]
 

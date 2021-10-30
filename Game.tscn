@@ -1,12 +1,8 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Prefab Scenes/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Misc Assets/street.png" type="Texture" id=2]
-[ext_resource path="res://Misc Assets/car.png" type="Texture" id=3]
-[ext_resource path="res://Misc Assets/mat.png" type="Texture" id=4]
+[ext_resource path="res://TestWorld.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Font/AlertFont.tres" type="DynamicFont" id=5]
-[ext_resource path="res://Doormat.gd" type="Script" id=6]
-[ext_resource path="res://Misc Assets/housetest.png" type="Texture" id=7]
 [ext_resource path="res://Inventory.gd" type="Script" id=8]
 [ext_resource path="res://Prefab Scenes/Data.tscn" type="PackedScene" id=9]
 
@@ -15,17 +11,12 @@ bg_color = Color( 0.976471, 0.596078, 0.133333, 0.784314 )
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 240.884, 97.6065 )
-
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 94.0721, 54.5339 )
-
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 399.517, 98.9317 )
-
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 159.307, 226.102 )
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.984314, 0.760784, 0.494118, 0.635294 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="Game" type="Node"]
 
@@ -43,6 +34,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="HBoxContainer" type="HBoxContainer" parent="GUI/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Label" type="Label" parent="GUI"]
 visible = false
 margin_left = 318.0
@@ -55,60 +53,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="World" type="Node2D" parent="."]
-z_index = -100
+[node name="Panel2" type="Panel" parent="GUI"]
+margin_left = 211.261
+margin_top = 512.921
+margin_right = 286.261
+margin_bottom = 587.921
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="street" type="Sprite" parent="World"]
-position = Vector2( 534.092, 268.725 )
-scale = Vector2( 2.31339, 2.31339 )
-texture = ExtResource( 2 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="World"]
-position = Vector2( 79.1804, 14.5106 )
-
-[node name="car" type="Sprite" parent="World/StaticBody2D"]
-texture = ExtResource( 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/StaticBody2D"]
-shape = SubResource( 2 )
-
-[node name="Area2D" type="Area2D" parent="World"]
-position = Vector2( 865.885, 359.579 )
-script = ExtResource( 6 )
-alertPath = NodePath("../../GUI/Label")
-
-[node name="doormat" type="Sprite" parent="World/Area2D"]
-scale = Vector2( 0.191, 0.11 )
-texture = ExtResource( 4 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Area2D"]
-shape = SubResource( 3 )
-
-[node name="housetest" type="Sprite" parent="World"]
-position = Vector2( 645.796, -162.223 )
-scale = Vector2( 0.692769, 0.692769 )
-texture = ExtResource( 7 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="World/housetest"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/housetest/StaticBody2D"]
-position = Vector2( 12.8456, 26.9756 )
-shape = SubResource( 4 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="World/housetest/StaticBody2D"]
-position = Vector2( -228.649, 151.576 )
-shape = SubResource( 5 )
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="World/housetest/StaticBody2D"]
-position = Vector2( 251.77, 152.861 )
-shape = SubResource( 5 )
+[node name="World" parent="." instance=ExtResource( 2 )]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 510, 350 )
 
 [node name="InventoryManager" type="Node" parent="."]
 script = ExtResource( 8 )
+playerPath = NodePath("../Player")
 
 [node name="GameData" parent="." instance=ExtResource( 9 )]
-
-[connection signal="body_entered" from="World/Area2D" to="World/Area2D" method="_on_Area2D_body_entered"]
-[connection signal="body_exited" from="World/Area2D" to="World/Area2D" method="_on_Area2D_body_exited"]

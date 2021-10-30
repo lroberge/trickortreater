@@ -1,5 +1,5 @@
 tool
-class_name CandyTypeList extends Node
+extends Node
 
 # Variables
 export(Array, Resource) var candy_types setget set_candytypes
