@@ -28,7 +28,7 @@ _global_script_class_icons={
 
 config/name="Trick or Treat"
 run/main_scene="res://Game.tscn"
-config/icon="res://Assets/icon.png"
+config/icon="res://Misc Assets/icon.png"
 
 [display]
 
@@ -68,4 +68,4 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
-environment/default_environment="res://default_env.tres"
+environment/default_environment="res://Misc Assets/default_env.tres"

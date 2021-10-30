@@ -1,6 +1,6 @@
 extends Node
 
-const MAX_ITEMS = 10
+export var MAX_ITEMS = 10
 var currItems = []
 
 # Called when the node enters the scene tree for the first time.
