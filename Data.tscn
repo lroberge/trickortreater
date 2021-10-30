@@ -1,0 +1,48 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://GameData.gd" type="Script" id=1]
+[ext_resource path="res://Candy Types/Food_38.png" type="Texture" id=2]
+[ext_resource path="res://Candy Types/Food_16.png" type="Texture" id=3]
+[ext_resource path="res://Candy Types/CandyType.gd" type="Script" id=4]
+[ext_resource path="res://Candy Types/Food_41.png" type="Texture" id=5]
+[ext_resource path="res://Candy Types/Food_13.png" type="Texture" id=6]
+[ext_resource path="res://Candy Types/Food_31.png" type="Texture" id=7]
+
+[sub_resource type="Resource" id=1]
+resource_name = "Hard Candy"
+script = ExtResource( 4 )
+displayImage = ExtResource( 2 )
+name = "Hard Candy"
+sugar = 0
+
+[sub_resource type="Resource" id=2]
+resource_name = "Banana"
+script = ExtResource( 4 )
+displayImage = ExtResource( 6 )
+name = "Banana"
+sugar = 2
+
+[sub_resource type="Resource" id=3]
+resource_name = "Geeks"
+script = ExtResource( 4 )
+displayImage = ExtResource( 3 )
+name = "Geeks"
+sugar = 6
+
+[sub_resource type="Resource" id=4]
+resource_name = "Blue Raspberry Fish"
+script = ExtResource( 4 )
+displayImage = ExtResource( 5 )
+name = "Blue Raspberry Fish"
+sugar = 5
+
+[sub_resource type="Resource" id=5]
+resource_name = "Vanilla Jelly Cup"
+script = ExtResource( 4 )
+displayImage = ExtResource( 7 )
+name = "Vanilla Jelly Cup"
+sugar = 3
+
+[node name="GameData" type="Node"]
+script = ExtResource( 1 )
+candy_types = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ]
