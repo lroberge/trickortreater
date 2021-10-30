@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://PlayerTest.gd" type="Script" id=1]
+
+[node name="Game" type="Node"]
+
+[node name="PlayerTest" type="Polygon2D" parent="."]
+position = Vector2( 579.173, 245.795 )
+polygon = PoolVector2Array( -2.04922, -44.9367, 47.3924, -1.85185, 0.0697021, 45.4708, -45.1341, -1.14554 )
+script = ExtResource( 1 )
