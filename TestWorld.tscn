@@ -38,7 +38,6 @@ shape = SubResource( 1 )
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( 865.885, 359.579 )
 script = ExtResource( 5 )
-alertPath = NodePath("../../GUI/Label")
 
 [node name="doormat" type="Sprite" parent="Area2D"]
 scale = Vector2( 0.191, 0.11 )
@@ -67,4 +66,3 @@ position = Vector2( 251.77, 152.861 )
 shape = SubResource( 4 )
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
-[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_Area2D_body_exited"]

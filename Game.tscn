@@ -2,9 +2,9 @@
 
 [ext_resource path="res://Prefab Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://TestWorld.tscn" type="PackedScene" id=2]
+[ext_resource path="res://GUIInventorySlot.gd" type="Script" id=3]
 [ext_resource path="res://Font/AlertFont.tres" type="DynamicFont" id=5]
 [ext_resource path="res://Inventory.gd" type="Script" id=8]
-[ext_resource path="res://Prefab Scenes/Data.tscn" type="PackedScene" id=9]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.976471, 0.596078, 0.133333, 0.784314 )
@@ -22,7 +22,7 @@ corner_radius_bottom_left = 10
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
-[node name="Panel" type="Panel" parent="GUI"]
+[node name="InventoryPanel" type="Panel" parent="GUI"]
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -30,13 +30,167 @@ margin_left = 200.0
 margin_top = -100.0
 margin_right = -200.0
 custom_styles/panel = SubResource( 1 )
+script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="GUI/Panel"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="Slot1" type="Panel" parent="GUI/InventoryPanel"]
+margin_left = 18.261
+margin_top = 12.921
+margin_right = 93.261
+margin_bottom = 87.921
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemTexture" type="TextureRect" parent="GUI/InventoryPanel/Slot1"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -31.0
+margin_top = -31.0
+margin_right = 31.0
+margin_bottom = 31.0
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot2" type="Panel" parent="GUI/InventoryPanel"]
+margin_left = 102.522
+margin_top = 12.842
+margin_right = 177.522
+margin_bottom = 87.842
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemTexture" type="TextureRect" parent="GUI/InventoryPanel/Slot2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -31.0
+margin_top = -31.0
+margin_right = 31.0
+margin_bottom = 31.0
+expand = true
+
+[node name="Slot3" type="Panel" parent="GUI/InventoryPanel"]
+margin_left = 188.044
+margin_top = 12.6841
+margin_right = 263.044
+margin_bottom = 87.6841
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemTexture" type="TextureRect" parent="GUI/InventoryPanel/Slot3"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -31.0
+margin_top = -31.0
+margin_right = 31.0
+margin_bottom = 31.0
+expand = true
+
+[node name="Slot4" type="Panel" parent="GUI/InventoryPanel"]
+margin_left = 273.044
+margin_top = 12.6841
+margin_right = 348.044
+margin_bottom = 87.6841
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemTexture" type="TextureRect" parent="GUI/InventoryPanel/Slot4"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -31.0
+margin_top = -31.0
+margin_right = 31.0
+margin_bottom = 31.0
+expand = true
+
+[node name="Slot5" type="Panel" parent="GUI/InventoryPanel"]
+margin_left = 358.044
+margin_top = 12.6841
+margin_right = 433.044
+margin_bottom = 87.6841
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemTexture" type="TextureRect" parent="GUI/InventoryPanel/Slot5"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -31.0
+margin_top = -31.0
+margin_right = 31.0
+margin_bottom = 31.0
+expand = true
+
+[node name="Slot6" type="Panel" parent="GUI/InventoryPanel"]
+margin_left = 443.044
+margin_top = 12.6841
+margin_right = 518.044
+margin_bottom = 87.6841
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemTexture" type="TextureRect" parent="GUI/InventoryPanel/Slot6"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -31.0
+margin_top = -31.0
+margin_right = 31.0
+margin_bottom = 31.0
+expand = true
+
+[node name="Slot7" type="Panel" parent="GUI/InventoryPanel"]
+margin_left = 528.044
+margin_top = 12.6841
+margin_right = 603.044
+margin_bottom = 87.6841
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemTexture" type="TextureRect" parent="GUI/InventoryPanel/Slot7"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -31.0
+margin_top = -31.0
+margin_right = 31.0
+margin_bottom = 31.0
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -53,23 +207,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel2" type="Panel" parent="GUI"]
-margin_left = 211.261
-margin_top = 512.921
-margin_right = 286.261
-margin_bottom = 587.921
-custom_styles/panel = SubResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="World" parent="." instance=ExtResource( 2 )]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 510, 350 )
-
-[node name="InventoryManager" type="Node" parent="."]
-script = ExtResource( 8 )
-playerPath = NodePath("../Player")
-
-[node name="GameData" parent="." instance=ExtResource( 9 )]
